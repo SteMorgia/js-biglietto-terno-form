@@ -12,21 +12,30 @@ generaBiglietto.addEventListener('click',
         console.log (prezzo);
         let eta = document.getElementById('eta').value;
         console.log (eta);
+        let biglietto;
+        let numeroCarrozza = Math.floor(Math.random() * 10) + 1;
+        let numeroCodice = Math.floor(Math.random() * 9999) + 90000;
         if (eta == 'minorenne') {
             let sconto = prezzo * 20 / 100;
             prezzo = prezzo - sconto;
-            let biglietto = 'Biglietto Minorenne';
+            biglietto = 'Biglietto Minorenne';
         } else if (eta == 'over65') {
             let sconto = prezzo * 40 / 100;
             prezzo = prezzo - sconto;
-            let biglietto = 'Biglietto silver';
+            biglietto = 'Biglietto silver';
         } else {
-            let biglietto = 'Biglietto standard';
+            biglietto = 'Biglietto standard';
         }
+        document.getElementById('container').className = 'show';
         const passeggero = document.getElementById('passeggero');
         passeggero.innerHTML = nome;
         const offerta = document.getElementById('offerta');
         offerta.innerHTML = biglietto;
-        const carrozza = 
+        const carrozza = document.getElementById('carrozza');
+        carrozza.innerHTML = numeroCarrozza;
+        const codice = document.getElementById('codice');
+        codice.innerHTML = numeroCodice;
+        const costo = document.getElementById('costo');
+        costo.innerHTML = prezzo;
     }
 )
