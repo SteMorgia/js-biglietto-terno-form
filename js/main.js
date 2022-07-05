@@ -36,6 +36,6 @@ generaBiglietto.addEventListener('click',
         const codice = document.getElementById('codice');
         codice.innerHTML = numeroCodice;
         const costo = document.getElementById('costo');
-        costo.innerHTML = prezzo;
+        costo.innerHTML = prezzo.toFixed(2);
     }
 )
